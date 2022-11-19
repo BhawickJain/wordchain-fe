@@ -4,6 +4,8 @@
   "private": true,
   "license": "CC-BY-NC-ND-4.0",
   "dependencies": {
+    "@types/country-list": "^2.1.1",
+    "country-list": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -17,7 +19,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "...": "yarn type-check && yarn test && yarn lint && yarn format"
   },
   "browserslist": {
     "production": [

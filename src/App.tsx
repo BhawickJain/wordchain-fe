@@ -1,7 +1,20 @@
-import { greet } from "./utils/greet";
+import { useState } from "react";
+import { LandingPage } from "./components/LandingPage";
+import { SinglePersonGame } from "./components/SinglePersonGame";
+import { gameMode } from "./types";
+import { getCountryNames } from "./utils/getCountryNames";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  const [mode, setMode] = useState<gameMode>("start");
+  const [wordPack, setwordPack] = useState<string[]>(getCountryNames());
+  return (
+    <>
+      {mode === "start" && <LandingPage setMode={setMode} />}
+      {mode === "single-player" && (
+        <SinglePersonGame setMode={setMode} wordpack={wordPack} />
+      )}
+    </>
+  );
 }
 
 export default App;
