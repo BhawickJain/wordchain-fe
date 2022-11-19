@@ -6,7 +6,7 @@ import { getCountryNames } from "./utils/getCountryNames";
 
 function App(): JSX.Element {
   const [mode, setMode] = useState<gameMode>("start");
-  const [wordPack, setwordPack] = useState<string[]>(getCountryNames());
+  const [wordPack, _] = useState<string[]>(getCountryNames());
   return (
     <>
       {mode === "start" && <LandingPage setMode={setMode} />}
